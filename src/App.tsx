@@ -8,7 +8,7 @@ function User(props: any) {
   return (
     <div className="w-full h-full flex flex-col-reverse bg-gray-400">
       <input type="text" className="m-2 rounded px-2 py-2" />
-      <button onClick={() => console.log("Hello")} className='bg-slate-600 rounded'>{props.name}</button>
+      <button onClick={() => console.log("Hello")} className='rounded'>{props.name}</button>
     </div>
   );
 }
@@ -36,6 +36,7 @@ function App() {
   
   return(
     <div className='flex flex-row h-screen'>
+
       {/* Sidebar container */}
       <div className='w-[5.5rem] rounded-full flex flex-col items-center bg-gray-900 '>
         {
