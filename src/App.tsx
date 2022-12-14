@@ -6,7 +6,7 @@ import './styles/global.css';
 
 function User(props: any) {
   return (
-    <div className="w-full h-full flex flex-col-reverse">
+    <div className="w-full h-full flex flex-col-reverse bg-gray-400">
       <input type="text" placeholder={props.name} className="" />
       <button onClick={() => console.log("Hello")} className='bg-slate-600 rounded'>hello</button>
     </div>
@@ -37,12 +37,12 @@ function App() {
   return(
     <div className='flex flex-row h-screen'>
       {/* Sidebar container */}
-      <div className='w-[5.5rem] rounded flex flex-col items-center bg-slate-500 '>
+      <div className='w-[5.5rem] rounded-full flex flex-col items-center bg-gray-900 '>
         {
           routes.map((route, index) => {
             return <Link to={route.route}>
               <ul>
-                <button className='transition hover:bg-slate-600 bg-slate-400 w-[4rem] h-[4rem] rounded-full my-2'>{route.username}</button>
+                <button className='transition bg-gray-600 hover:bg-gray-400 w-[4rem] h-[4rem] rounded-full my-2'>{route.username}</button>
               </ul>
             </Link>
           })
