@@ -7,8 +7,11 @@ import './styles/global.css';
 function User(props: any) {
   return (
     <div className="w-full h-full flex flex-col-reverse bg-gray-400">
-      <input type="text" className="m-2 rounded px-2 py-2" />
-      <button onClick={() => console.log("Hello")} className='rounded'>{props.name}</button>
+      <div>
+        <h1>{props.name}</h1>
+        <input type="text" className="m-2 rounded px-2 py-2 w-[35rem]" />
+        <button onClick={() => console.log("Hello")} className='rounded w-28 h-10 bg-gray-500'>Send</button>
+      </div>
     </div>
   );
 }
