@@ -44,7 +44,15 @@ function App() {
     <div className='flex flex-row h-screen'>
       {/* Sidebar container */}
       <div className='w-[16rem] bg-slate-500 '>
-        
+        {
+          routes.map((route) => {
+            return <Link to={route.route}>
+              <ul>
+                <li>{route.username}</li>
+              </ul>
+            </Link>
+          })
+        }
       </div>
 
       {/* Content container */}
@@ -55,7 +63,7 @@ function App() {
             })
           }
         </Routes>
-      </div>
+    </div>
     
   );
 }
