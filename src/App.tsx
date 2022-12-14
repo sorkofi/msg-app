@@ -7,8 +7,8 @@ import './styles/global.css';
 function User(props: any) {
   return (
     <div className="w-full h-full flex flex-col-reverse bg-gray-400">
-      <input type="text" placeholder={props.name} className="" />
-      <button onClick={() => console.log("Hello")} className='bg-slate-600 rounded'>hello</button>
+      <input type="text" className="m-2 rounded px-2 py-2" />
+      <button onClick={() => console.log("Hello")} className='bg-slate-600 rounded'>{props.name}</button>
     </div>
   );
 }
