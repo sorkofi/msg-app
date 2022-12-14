@@ -42,7 +42,7 @@ function App() {
           routes.map((route, index) => {
             return <Link to={route.route}>
               <ul>
-                <button className='transition bg-gray-600 hover:bg-gray-400 w-[4rem] h-[4rem] rounded-full my-2'>{route.username}</button>
+                <button className='bg-gray-400 transition hover:shadow-gray-800 hover:shadow-inner w-[4rem] h-[4rem] rounded-full my-2'>{route.username}</button>
               </ul>
             </Link>
           })
