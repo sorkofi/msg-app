@@ -29,13 +29,7 @@ let routes = [
   {
     route: "/palino",
     username: "palino",
-  },
-  {
-    route: "/lol",
-    username: "lol",
-  },
-
-
+  }
 ]
 
 function App() {
@@ -43,12 +37,12 @@ function App() {
   return(
     <div className='flex flex-row h-screen'>
       {/* Sidebar container */}
-      <div className='w-[16rem] bg-slate-500 '>
+      <div className='w-[5.5rem] rounded flex flex-col items-center bg-slate-500 '>
         {
-          routes.map((route) => {
+          routes.map((route, index) => {
             return <Link to={route.route}>
               <ul>
-                <li>{route.username}</li>
+                <button className='transition hover:bg-slate-300 bg-slate-400 w-[4rem] h-[4rem] rounded-full my-2'>li{route.username}</button>
               </ul>
             </Link>
           })
