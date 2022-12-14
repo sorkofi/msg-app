@@ -5,7 +5,12 @@ import reactLogo from './assets/react.svg';
 import './styles/global.css';
 
 function User(props: any) {
-  return <h1>{props.name}</h1>;
+  return (
+    <div className="w-full h-full flex flex-col-reverse">
+      <input type="text" placeholder={props.name} className="" />
+      <button onClick={() => console.log("Hello")} className='bg-slate-600 rounded'>hello</button>
+    </div>
+  );
 }
 
 let routes = [
@@ -25,20 +30,24 @@ let routes = [
     route: "/palino",
     username: "palino",
   },
+  {
+    route: "/lol",
+    username: "lol",
+  },
+
 
 ]
 
 function App() {
   
   return(
-    <div className='flex flex-row'>
+    <div className='flex flex-row h-screen'>
       {/* Sidebar container */}
       <div className='w-[16rem] bg-slate-500 '>
         
       </div>
 
       {/* Content container */}
-      <div className='flex-auto h-screen z-[-1] bg-slate-300'>
         <Routes>
           {
             routes.map((route, index) => {
@@ -46,9 +55,8 @@ function App() {
             })
           }
         </Routes>
-        
       </div>
-    </div>
+    
   );
 }
 
