@@ -23,8 +23,17 @@ let users = [
   }
 ]
 
-function Root() {
-  return <h1>hello World</h1>;
+function Fulano() {
+  return <h1>Fulano</h1>;
+}
+function Sicrano() {
+  return <h1>Sicrano</h1>;
+}
+function Pinco() {
+  return <h1>Pinco</h1>;
+}
+function Palino() {
+  return <h1>Palino</h1>;
 }
 
 function App() {
@@ -39,7 +48,9 @@ function App() {
               
             }} className='w-4/5 bg-red-400 p-2 mx-5 my-1 rounded'>{e.name}</button> */}
             <nav>
-              <Link to="/test"><button className='w-4/5 bg-red-400 p-2 mx-5 my-1 rounded'>{e.name}</button></Link>
+              <Link to={"/"+e.name}>
+                <button className='w-4/5 bg-red-400 p-2 mx-5 my-1 rounded'>{e.name}</button>
+              </Link>
             </nav>
           </li>)}
         </ol>
@@ -48,7 +59,10 @@ function App() {
       {/* Content container */}
       <div className='flex-auto h-screen z-[-1] bg-slate-300'>
         <Routes>
-          <Route path="/test" element={<Root />} />
+          <Route path={"/fulano"} element={<Fulano />} />
+          <Route path={"/sicrano"} element={<Sicrano />} />
+          <Route path={"/pinco"} element={<Pinco />} />
+          <Route path={"/palino"} element={<Palino />} />
         </Routes>
         
       </div>
