@@ -7,9 +7,17 @@ export function Sidebar(props: any) {
             props.props.map((route: any, index: number) => {
                 return (
                     <Link to={index.toString()}>
-                    <ul>
-                        <button className='bg-gray-400 transition hover:shadow-gray-800 hover:shadow-inner w-12 h-12 mx-4 rounded-xl my-2'>{route.username}</button>
-                    </ul>
+                        <button className='
+                            
+                            rounded-[24px]
+                            transition-all
+                            hover:rounded-[15px]
+                            
+                            hover:bg-slate-400
+                            bg-gray-400
+                            
+                            w-12 h-12 mx-4 my-2'
+                        >{route.username}</button>
                     </Link>
                 );
             })
