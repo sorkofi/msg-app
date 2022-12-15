@@ -1,6 +1,8 @@
 import { useMemo, useState } from 'react';
 import { Link, Route, Routes } from 'react-router-dom';
 
+import { Sidebar } from "./components/Sidebar";
+
 import reactLogo from './assets/react.svg';
 import './styles/global.css';
 
@@ -8,29 +10,25 @@ function User(props: any) {
   return (
     <div className="w-full h-full flex flex-col-reverse bg-gray-400">
       <div>
-        <h1>{props.name}</h1>
-        <input type="text" className="m-2 rounded px-2 py-2 w-[35rem]" />
+        <h1>{props.username}</h1>
+        <input type="text" className="relative m-2 rounded px-2 py-2 w-[35rem]" />
         <button onClick={() => console.log("Hello")} className='rounded w-28 h-10 bg-gray-500'>Send</button>
       </div>
     </div>
   );
 }
 
-let routes = [
+let users = [
   {
-    route: "/fulano",
     username: "fulano",
   },
   {
-    route: "/sicrano",
     username: "sicrano",
   },
   {
-    route: "/pinco",
     username: "pinco",
   },
   {
-    route: "/palino",
     username: "palino",
   }
 ]
@@ -41,23 +39,13 @@ function App() {
     <div className='flex flex-row h-screen'>
 
       {/* Sidebar container */}
-      <div className='w-[5.5rem] rounded-full flex flex-col items-center bg-gray-900 '>
-        {
-          routes.map((route, index) => {
-            return <Link to={route.route}>
-              <ul>
-                <button className='bg-gray-400 transition hover:shadow-gray-800 hover:shadow-inner w-[4rem] h-[4rem] rounded-full my-2'>{route.username}</button>
-              </ul>
-            </Link>
-          })
-        }
-      </div>
+      <Sidebar props={users} />
 
       {/* Content container */}
         <Routes>
           {
-            routes.map((route, index) => {
-              return <Route key={index} path={route.route} element={<User name={route.username} />} />
+            users.map((user, index) => {
+              return <Route key={index} path={index.toString()} element={<User name={user.username} />} />
             })
           }
         </Routes>
