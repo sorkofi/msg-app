@@ -22,18 +22,24 @@ export function Sidebar(props: any) {
                                     setExpanded(true);
                                     }}
                                 className='rounded-[24px] transition-all hover:rounded-[15px] hover:bg-slate-400 bg-gray-400 text-center w-12 h-12 mx-4 my-2'>
-                                
-                                <Link 
-                                    to={index.toString()}>{route.username}
-                                </Link>
+                                {route.username}
                             </button>
                         </>
                     );
                 })
                 }
             </div>
-            {expanded && 
-                <div className=" w-28 h-screen bg-red-200"></div>
+            { expanded && 
+                <div className="w-80 h-screen bg-red-200">
+                    {
+                        props.props.map((e: any, index: number) => {
+                            return <Link className="flex" to={index.toString()}>
+                                <button>{e.username}</button>
+                            </Link>;
+                        })
+                    }
+                </div>
+                
             }
         </>
     );
