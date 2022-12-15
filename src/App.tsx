@@ -12,7 +12,7 @@ function User(props: any) {
       <div>
         <h1>{props.props}</h1>
         <input type="text" className="relative m-2 rounded px-2 py-2 w-[35rem]" />
-        <button onClick={() => console.log("Hello")} className='rounded w-28 h-10 bg-gray-500'>Send</button>
+        <button onClick={() => console.log("send clicked")} className='rounded w-28 h-10 bg-gray-500'>Send</button>
       </div>
     </div>
   );
@@ -38,10 +38,9 @@ function App() {
   return(
     <div className='flex flex-row h-screen bg-gray-400'>
 
-      {/* Sidebar container */}
       <Sidebar props={users} />
 
-      {/* Content container */}
+      {/* Content container from sidebar items */}
         <Routes>
           {
             users.map((user, index) => {
