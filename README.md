@@ -1,6 +1,11 @@
 # msg-app
-Messaging app interface
+Messaging app interface inspired by Discord made educational purposes.
 
-Project done for experimenting purposes with typescript and tailwindcss.
+(!) Still in early development and not actually usable.
 
-(in-dev) more info soon.
+If you wish to try it out, run the following commands:
+
+- `git clone https://github.com/sorkofi/msg-app`
+- `cd msg-app`
+- `yarn`
+- `yarn dev`
