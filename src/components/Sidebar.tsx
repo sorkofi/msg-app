@@ -30,7 +30,7 @@ export function Sidebar(props: any) {
                 }
             </div>
             { expanded && 
-                <div className="w-80 h-screen bg-red-200">
+                <div className="transition-transform w-80 h-screen bg-red-200">
                     {
                         props.props.map((e: any, index: number) => {
                             return <Link className="flex" to={index.toString()}>
