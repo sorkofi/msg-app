@@ -10,8 +10,8 @@ export function Sidebar(props: any) {
                 {
                     props.usernames.map((route: any, index: number) => {
                         return (
-                            <div className="flex">
-                                <Link to={index.toString()}>
+                            <div className="flex" key={index}>
+                                <Link to={index.toString() }>
                                     <button className="rounded-[24px] transition-all hover:rounded-[15px] hover:bg-slate-400 bg-gray-400 text-center w-12 h-12 mx-4 my-2">{route.username}</button>
                                 </Link>
                             </div>
