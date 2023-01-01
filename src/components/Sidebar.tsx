@@ -6,11 +6,11 @@ export function Sidebar(props: any) {
 
     return (
         <>
-            
+        
             <div className='w-16 h-full flex flex-col items-center bg-gray-900 text-gray-800 text-md'>
                 
                 {
-                props.props.map((route: any, index: number) => {
+                props.usernames.map((route: any, index: number) => {
                     return (
                         <>
                             <button 
@@ -29,10 +29,11 @@ export function Sidebar(props: any) {
                 })
                 }
             </div>
-            { expanded && 
+
+            {/* { expanded && 
                 <div className="transition-transform w-80 h-screen bg-red-200">
                     {
-                        props.props.map((e: any, index: number) => {
+                        props.usernames.map((e: any, index: number) => {
                             return <Link className="flex" to={index.toString()}>
                                 <button>{e.username}</button>
                             </Link>;
@@ -40,7 +41,7 @@ export function Sidebar(props: any) {
                     }
                 </div>
                 
-            }
+            } */}
         </>
     );
 }

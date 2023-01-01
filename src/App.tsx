@@ -6,6 +6,7 @@ import { User } from "./components/User";
 
 import reactLogo from './assets/react.svg';
 import './styles/global.css';
+import axios from 'axios';
 
 let users = [
   {
@@ -22,18 +23,25 @@ let users = [
   }
 ]
 
+
+
 function App() {
-  
+
   return(
     <div className='flex flex-row h-screen bg-gray-400'>
 
-      <Sidebar props={users} />
+      <Sidebar usernames={users} />
 
       {/* Content container from sidebar items */}
         <Routes>
           {
             users.map((user, index) => {
-              return <Route key={index} path={index.toString()} element={<User props={user.username} />} />
+              return <Route 
+                key={index}
+                path={index.toString()}
+                element={
+                  <User username={user.username} />
+                } />
             })
           }
         </Routes>
