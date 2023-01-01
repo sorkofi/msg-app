@@ -7,14 +7,14 @@ export function Sidebar(props: any) {
             <div className='w-16 h-full flex flex-col items-center bg-gray-900 text-gray-800 text-md'>
                 
                 {
-                    props.channels/*slice(0, 5)*/.map((chan: any, index: number) => {
+                    props.userContent/*slice(0, 5)*/.map((user: any, index: number) => {
                         return (
                             <div className="flex" key={index}>
                                 <Link to={index.toString() }>
                                     <button 
-                                        onClick={() => console.log(chan)}
+                                        onClick={() => console.log(user.name)}
                                         className="rounded-[24px] transition-all hover:rounded-[15px] hover:bg-slate-400 bg-gray-400 text-center w-12 h-12 mx-4 my-2">
-                                            {chan}
+                                            {user.name}
                                         </button>
                                 </Link>
                             </div>

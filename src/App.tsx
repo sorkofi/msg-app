@@ -9,11 +9,18 @@ import './styles/global.css';
 import axios from 'axios';
 
 function App() {
-  const [channels, setChannels] = useState([
-    "hi",
-    "hello",
-    "bye"
-  ])
+  const [userContent, setUserContent] = useState([
+    {
+      id: 0,
+      name: "mike",
+      message: "hi"
+    },
+    {
+      id: 0,
+      name: "john",
+      message: "welcome!"
+    }
+  ]);
 
    // let data = axios.get("https://dummyjson.com/comments").then(async (res) => await res)
 
@@ -31,17 +38,17 @@ function App() {
   return(
     <div className='flex flex-row h-screen bg-gray-400'>
 
-      <Sidebar channels={channels} />
+      <Sidebar userContent={userContent} />
 
       {/* Content container from sidebar items */}
         <Routes>
           {
-            channels.map((chan: any, index) => {
+            userContent.map((user: any, index) => {
               return <Route 
                 key={index}
                 path={index.toString()}
                 element={
-                  <Channel chan={chan} />
+                  <Channel />
                 } />
             })
           }
