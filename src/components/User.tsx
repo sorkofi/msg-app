@@ -17,7 +17,7 @@ export function User(props: any) {
 
             <button 
                onClick={() => console.log("send clicked")}
-               className='rounded w-28 h-10 bg-gray-500'>
+               className='rounded w-28 h-10 bg-gray-500 transition-colors active:bg-cyan-800'>
                Send
             </button>
          </div>
