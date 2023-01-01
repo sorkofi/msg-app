@@ -1,13 +1,22 @@
 import { useState } from "react";
 
 interface Props {
-   data: string
+   data: string[],
+   channel: [string]
 }
 
-export function Message(props: Props) {
+export function Message(args: Props) {
    const [message, setMessage] = useState([]);
 
    return (
-      <h1>Message</h1>
+      <ul>
+         {
+            args.data.map((message) => {
+               return <li>
+                  {message}
+               </li>
+            })
+         }
+      </ul>
    );
 }
